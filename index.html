@@ -10,7 +10,43 @@
      }
     </style>
   </head>
-
+<script>
+const input = document.querySelector('input')
+//undefined
+input.addEventListener('keydown', function(e) {
+    if (e.which === 71) {
+        return e.preventDefault()
+    }
+})
+//undefined
+let divs = document.querySelectorAll('div')
+//undefined
+function bubble(e) {
+console.log(this.firstChild.nodeValue.trim() + ' bubbled')
+}
+//undefined
+for (let i = 0; i < divs.length; i++) {
+divs[i].addEventListener('click', bubble)
+}
+//undefined
+//VM1154:2 5 bubbled
+//VM1154:2 4 bubbled
+//VM1154:2 3 bubbled
+//VM1154:2 2 bubbled
+//VM1154:2 1 bubbled
+//VM1154:2 3 bubbled
+//VM1154:2 2 bubbled
+//VM1154:2 1 bubbled
+divs = document.querySelectorAll('div')
+//NodeList(6) [div, div, div, div, div, div]0: div1: div2: div3: div4: div5: divlength: 6__proto__: NodeList
+function capture(e) {
+console.log (this.firstChild.nodeValue.trim() + ' captured')
+}
+for (let i = 0; i< divs.length; i++) {
+divs[i].addEventListener('click', capture, true)
+}
+  </script>
+</script>
   <body>
     <main id="main">My ID is "main"!</main>
 
